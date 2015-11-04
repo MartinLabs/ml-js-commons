@@ -1,6 +1,5 @@
 {
-  "name": "martin.labs-javascript-commons",
-  "private": true,
+  "name": "ml-js-commons",
   "main": "martinlabs.js",
   "version": "1.0.1",
   "description": "common javascript code of martinlabs",

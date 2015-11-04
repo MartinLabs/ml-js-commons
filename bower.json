@@ -1,0 +1,26 @@
+{
+  "name": "martin.labs-javascript-commons",
+  "private": true,
+  "main": [
+    "martinlabs.js",
+    "fotoGrabber.js"
+  ],
+  "version": "1.0.1",
+  "authors": [
+    "Gil Lopes Bueno <melanke.hc@gmail.com>"
+  ],
+  "description": "common javascript code of martinlabs",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-file-upload": "~9.10.1",
+    "moment": "latest"
+  }
+}

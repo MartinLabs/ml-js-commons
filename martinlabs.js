@@ -153,13 +153,13 @@
         dataHora: function(d)
         {
             moment.locale("pt");
-            return moment(d).format("ddd, DD/MMMM hh:mm");
+            return moment(d).format("ddd, DD/MMMM HH:mm");
         },
 
         hora: function(d)
         {
             moment.locale("pt");
-            return moment(d).format("hh:mm");
+            return moment(d).format("HH:mm");
         },
 
         dias: function(d)

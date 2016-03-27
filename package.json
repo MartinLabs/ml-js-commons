@@ -1,10 +1,10 @@
 {
   "name": "ml-js-commons",
   "main": "martinlabs.js",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "common javascript code of martinlabs",
-  "dependencies": {
-    "jquery": "latest",
-    "moment": "latest"
+  "peerDependencies": {
+    "jquery": ">= 1.0",
+    "moment": ">= 1.0"
   }
 }

@@ -149,6 +149,12 @@
             return moment(d).format("ddd, DD/MMMM HH:mm");
         },
 
+        dataHoraMinuto: function(d)
+        {
+            moment.locale("pt");
+            return moment(d).format("DD/MM/YY HH:mm");
+        },
+
         hora: function(d)
         {
             moment.locale("pt");
@@ -575,6 +581,100 @@
         return sha1;
 
     }());
+
+    //JQUERY PLUGINS
+
+    $.fn.message = function(opt){
+        
+        var el = $("<div></div>");
+        el.html(opt.text);
+        el.hide();
+        
+        if (opt.class) {
+            el.addClass(opt.class);
+        }
+        
+        if (opt.position === "before") {
+            $(this).before(el);
+        } else if (opt.position === "prepend") {
+            $(this).prepend(el);
+        } else if (opt.position === "append") {
+            $(this).append(el);
+        } else {
+            $(this).after(el);
+        }
+        
+        el.slideDown();
+        
+        if (opt.timeout) {
+            setTimeout(function(){
+                el.slideUp(function(){
+                    el.remove();
+                });
+            }, opt.timeout);
+        }
+    };
+
+    $.message = function(opt) {
+
+      var el = $("<div></div>");
+        el.html(opt.text || opt.Message);
+        el.hide();
+        
+        if (opt.class) {
+            el.addClass(opt.class);
+        } else if (opt.Success === true) {
+            el.addClass("success");
+        } else if (opt.Success === false) {
+            el.addClass("error");
+        }
+
+        el.addClass("fixed");
+        
+        $("body").append(el);
+        
+        el.slideDown();
+        
+        if (opt.timeout !== 0) {
+            //timeout padrão é 5000, só n tem timeout se colocar zero
+            setTimeout(function(){
+                el.slideUp(function(){
+                    el.remove();
+                });
+            }, opt.timeout || 5000);
+        }
+
+    };
+    
+    martinlabs.dialog = function(opt){
+        
+        var el = $("<div class='popup'><div class='window'>"+opt.text+"<div class='actionbar'></div></div></div>");
+        
+        for (var i in opt) {
+            if (i === "text") {
+                continue;
+            }
+            
+            var cb = opt[i];
+            
+            var b = $("<input type='button' value='"+i+"' style='margin-right: 10px;'/>");
+            if (cb === "close") {
+                b.click(function(){
+                    el.remove();
+                });
+            } else {
+                b.click(function(){
+                    cb.apply(el);
+                });
+            }
+            
+            el.find(".actionbar").append(b);
+        }
+        
+        $("body").append(el);
+        
+        return el;
+    };
     
     $.fn.precoAutoFormat = function(){
         

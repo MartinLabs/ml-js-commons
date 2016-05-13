@@ -245,6 +245,11 @@
         endereco: function(endereco)
         {
             return endereco.Rua + " " + endereco.Numero + ", " + endereco.Cidade + " - " + endereco.Estado;
+        },
+
+        telefone: function(tel)
+        {
+            return tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
         }
     };
 

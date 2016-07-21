@@ -249,7 +249,11 @@
 
         telefone: function(tel)
         {
-            return tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+            if (tel.length < 11) {
+              return tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+            } else {
+              return tel.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+            }
         }
     };
 

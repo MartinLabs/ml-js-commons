@@ -82,7 +82,7 @@
     }
 
 
-    tableExport = (function() {
+    var tableExport = (function() {
         "use strict";
         var version = "1.3";
         var csvSeparator = ',';
